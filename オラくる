@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダムテキスト表示</title>
+</head>
+<body>
+    <h1>ランダムテキスト表示</h1>
+    
+    <label for="comment">コメントを入力してください:</label>
+    <input type="text" id="comment" required>
+    <button onclick="showRandomText()">表示</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showRandomText() {
+            // 入力されたコメントを取得
+            var userComment = document.getElementById("comment").value;
+
+            // 50個のテキストの配列
+            var texts = [
+            "目の前にあるものはよいものであると考えるようにしている",
+        "認識においては悲観主義者、意志においては楽観主義者",
+        "狭き門から入れ",
+        "二次元にいたら子どもにやられるよ",
+        "夢を忘れないで！",
+        "私は学ぶために自分自身をさらけ出す時に「自由」を感じます。そしてそれは、危険なほどに美しく、ひとからひとへと伝わっていくのです",
+        "サタン、引き下がれ。そなたは神のことを思わず、人間のことを思っている",
+        "力を取り戻すことと、無力を認めることの両面作戦",
+        "芸術はコミュニケーションではなく愚かさへの抵抗",
+        "意図や意志の力というのは、非常に過大評価されているように思います",
+        "それぞれ個々の人生を大事にしてくださいね",
+        "それはクセでは？",
+        "運命によって「諦め」を得た「媚態」が「意気地」の自由に生きるのが「いき」である",
+        "空気を読まないことが、他人選択肢を増やし自由を増やす",
+        "人間は自由である。だが、その自由は、他人の自由を認めることによってのみ成り立つ",
+        "うらやまし思い切るとき猫の恋",
+        "女の三種の神器は、鏡と日記と下着である",
+        
+
+
+                // ... 他のテキストを追加
+                "テキスト50"
+            ];
+
+            // ランダムに1つのテキストを選択
+            var selectedText = texts[Math.floor(Math.random() * texts.length)];
+
+            // 結果を表示
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "コメント: " + userComment + "<br>ランダムに選ばれたテキスト: " + selectedText;
+        }
+    </script>
+</body>
+</html>
